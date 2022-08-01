@@ -1,0 +1,17 @@
+_ = input()
+a = set(int(u) for u in input().split(' '))
+
+n = int(input())
+for _ in range(n):
+    op, _ = input().split(' ')
+    b = set(int(u) for u in input().split(' '))
+    if op == "update":
+        a |= b
+    elif op == "intersection_update":
+        a &= b
+    elif op == "difference_update":
+        a -= b
+    elif op == "symmetric_difference_update":
+        a ^= b
+
+print(sum(a))
